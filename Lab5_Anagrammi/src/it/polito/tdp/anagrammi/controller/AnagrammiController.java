@@ -1,9 +1,12 @@
 package it.polito.tdp.anagrammi.controller;
 
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.anagrammi.model.Model;
+import it.polito.tdp.anagrammi.model.Parola;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -41,7 +44,10 @@ public class AnagrammiController {
 
     @FXML
     void doAnagramma(ActionEvent event) {
-
+    	
+    	//Applico metodo ricorsivo
+    	List<String> stringa = model.calcolaAnagramma(txtInput.getText(), 0);
+    	
     }
 
     @FXML
