@@ -20,4 +20,11 @@
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Algoritmo funzionamento.png</name>
+			<type>1</type>
+			<location>C:/Users/zierp/OneDrive/Desktop/Lab 03 PWR/Algoritmo funzionamento.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>
