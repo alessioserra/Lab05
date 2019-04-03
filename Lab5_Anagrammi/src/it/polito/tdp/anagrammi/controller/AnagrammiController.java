@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.anagrammi.model.Model;
-import it.polito.tdp.anagrammi.model.Parola;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,9 +44,33 @@ public class AnagrammiController {
     @FXML
     void doAnagramma(ActionEvent event) {
     	
+    	txtResultCorretto.clear();
+    	txtResultErrato.clear();
+    	
+    	//Controllo sulla correttezza della parola
+    	if (txtInput.getText().matches("[a-zA-Z]+")) {
+    	
+    	//Controllo sulla lunghezza della parola
+    	if (txtInput.getText().length()>1) {
+    	
     	//Applico metodo ricorsivo
     	List<String> stringa = model.calcolaAnagramma(txtInput.getText(), 0);
     	
+    	//Stampare i valori
+    	for (String s : stringa) {
+    		if (model.isCorrect(s)==true) txtResultCorretto.appendText(s+"\n");
+    		else txtResultErrato.appendText(s+"\n");
+    	}
+    	
+    	}else  {
+    		txtResultCorretto.appendText("Anagramma di una parola inutile\n");
+    		txtResultErrato.appendText("Anagramma di una parola inutile\n");  	
+    	}
+    	
+    	}else {
+    		txtResultCorretto.appendText("Inserire solo caratteri alfabetici!\n");
+    		txtResultErrato.appendText("Inserire solo caratteri alfabetici!\n"); 
+    	}
     }
 
     @FXML
